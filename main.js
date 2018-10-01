@@ -17,7 +17,7 @@ function Init(){
 			var x = topdis + (i-1)*blockwwid
 			var y = leftdis + (j-1)*blockwwid
 			a[i][j] = 0
-			document.write("<img id="+(i*5+j)+" src=\"\" width="+blockwid+" height="+blockwid+" style=\'position:absolute;left:"+y+"px;top:"+x+"px\' />")
+			document.write("<img id="+(i*5+j)+" src=\"\" width="+blockwid+" height="+blockwid+" style=\'position:absolute;left:"+y+"px;top:"+x+"px\' onload=\"Load()\"/>")
 		}
 	}
 }
@@ -63,6 +63,13 @@ function Update(){
 	document.getElementById(233).innerHTML = "score: " + score
 	Draw()
 	Isdead()
+}
+function Loaderr(){
+	alert("Error while Loading!\nPlease contact interestingLSY!");
+	return;
+}
+function Load(){
+	window.status="qwq!"
 }
 
 var dx = [0,-1,0,1]
