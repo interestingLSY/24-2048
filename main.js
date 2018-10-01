@@ -50,6 +50,7 @@ function Isdead(){
 			if( i != 4 && a[i+1][j] == a[i][j] ) return
 			if( j != 4 && a[i][j+1] == a[i][j] ) return
 		}
+	Draw()
 	alert("You have GGed!\nScore:"+score)
 	for( var i = 1 ; i <= 4 ; i++ )
 		for( var j = 1 ; j <= 4 ; j++ )
