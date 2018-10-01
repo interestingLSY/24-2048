@@ -2,6 +2,8 @@
 
 ud = $(date +%Y%m%d-%h:%m)
 
+clear
+
 echo ----------adding...----------
 git add .
 
