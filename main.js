@@ -17,11 +17,12 @@ function Init(){
 			var x = topdis + (i-1)*blockwwid
 			var y = leftdis + (j-1)*blockwwid
 			a[i][j] = 0
-			document.write("<img id="+(i*5+j)+" src=\"\" width="+blockwid+" height="+blockwid+" style=\'position:absolute;left:"+y+"px;top:"+x+"px\' onload=\"Load()\"/>")
+			document.write("<img id="+(i*5+j)+" src=\"\" width="+blockwid+" height="+blockwid+" style=\'position:absolute;left:"+y+"px;top:"+x+"px; opacity:0.85\' />")
 		}
 	}
 }
 function Draw(){
+	//while(!window.onload);
 	for( var i = 1 ; i <= 4 ; i++ ){
 		for( var j = 1 ; j <= 4 ; j++ )
 			Changeimg(i,j)
@@ -47,10 +48,11 @@ function Isdead(){
 				return
 	for( var i = 1 ; i <= 4 ; i++ )
 		for( var j = 1 ; j <= 4 ; j++ ){
-			if( i != 4 && a[i+1][j] == a[i][j] ) return
-			if( j != 4 && a[i][j+1] == a[i][j] ) return
+			if( i != 4 && a[i+1][j] == a[i][j] ) return;
+			if( j != 4 && a[i][j+1] == a[i][j] ) return;
 		}
-	Draw()
+	if( document.readyState != "complete" ) alert("QAQ");
+	//Draw()
 	alert("You have GGed!\nScore:"+score)
 	for( var i = 1 ; i <= 4 ; i++ )
 		for( var j = 1 ; j <= 4 ; j++ )
@@ -68,9 +70,6 @@ function Update(){
 function Loaderr(){
 	alert("Error while Loading!\nPlease contact interestingLSY!");
 	return;
-}
-function Load(){
-	window.status="qwq!"
 }
 
 var dx = [0,-1,0,1]
