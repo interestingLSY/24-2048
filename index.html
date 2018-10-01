@@ -1,31 +1,58 @@
-<html>
+<!-- Designed By InterestingLSY-->
+
+<html lang="zh">
 
 <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title> 2147483648! </title>
+	<script src="main.js"></script>
 </head>
 
-<body>
-	<h1> 2147483648 Online! </h1>
-	<script>
-		document.write("<h2>Script Begin</h2>");
-		/*
-		function changeImage(){
-			element=document.getElementById('myimage');
-			if (element.src.match("bulbon")){
-  				element.src="/i/eg_bulboff.gif";
-  			}else{
-  				element.src="/i/eg_bulbon.gif";
-  			}
-		}
-		*/
-	</script>
-	<button type="button" onclick="alert('Welcome!')">Click!</button>
-	<br />
-	<a href="test.html">
-		<h2 "color:blue;test-algin:center;font-size:40px">
-			TEST
-		</h2>
+<body background="bg.jpg" onkeydown="Keydown(event)">
+	<h1 style="text-align:center;color:#3927ff;margin:30px;font-size:50px"> 2147483648 Online! </h1>
+
+	<h2 id=233 style="left:50px; position:absolute; top:35px; color:#ffffff"> score: 0 </h2>
+	<h3 style="color:#dddddd;font-size:18px">
+		<b> How to play? </b>
+	</h3>
+	<p style="color:#cccccc;font-size:14px">
+		Use arrow keys to move the blocks. <br />
+		And two blocks of the same number <br />
+		can merge together! <br />
+		Try to make 2147483648 for <strong> YOURSELF! qwq</strong>
+	</p>
+
+	<h3 style="color:#dddddd;font-size:18px">
+		<b> Rules </b>
+	</h3>
+	<p style="color:#cccccc;font-size:14px">
+	<pre style="color:#cccccc;font-size:14px">
+AC		(Accepted)		2
+AC + AC = PC	(Partical Accepted)	4
+PC + PC = PE	(Presentation Wrror)	8
+PE + PE = OLE	(Output Limit Exceed)	16
+OLE+OLE = WA	(Wrong Answer)		32
+WA + WA = TLE	(Time Limit Exceed)	64
+TLE+TLE = MLE	(Memory Limit Exceed)	128
+MLE+MLE = RE	(Runtime Error)		256
+RE + RE = UKE	(Uknown ♂ Error)	512
+UKE+UKE = CE	(Compile Error)		1024
+CE + CE = JF	(Judgement ♂ Failed)	2048
+Guess what will happen next?</pre>
+	</p>
+
+	<a href="about.html" style="text-decoration:none">
+		<h3 style="color:#dddddd;font-size:18px">
+			<b> About The Game </b>
+			<sub style="font-size:14">(Click me qwq)</sub>
+		</h3>
 	</a>
-	<h2 style="text-align:center;font-family:arial;font-size:30px;color:green;background-color:red"> Merge these blocks to produce 2147483648! </h2>
+
+	<script> Init(); </script>
+	<script> Update(); </script>
+
+	<!-- <a href="test.html"> Test </a> -->
+
 </body>
 
 </html>
