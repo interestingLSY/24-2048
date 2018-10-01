@@ -55,6 +55,7 @@ function Isdead(){
 		for( var j = 1 ; j <= 4 ; j++ )
 			a[i][j] = 0
 	score = 0
+	Newnum()
 	Draw()
 }
 function Update(){
