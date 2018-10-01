@@ -46,21 +46,27 @@ function Isdead(){
 			if( a[i][j] == 0 )
 				return
 	for( var i = 1 ; i <= 4 ; i++ )
+		for( var j = 1 ; j <= 4 ; j++ ){
+			if( i != 4 && a[i+1][j] == a[i][j] ) return
+			if( j != 4 && a[i][j+1] == a[i][j] ) return;
+		}
+	alert("You have GGed!\nScore:"+score)
+	for( var i = 1 ; i <= 4 ; i++ )
 		for( var j = 1 ; j <= 4 ; j++ )
 			a[i][j] = 0
-	alert("You have GGed!\nScore:"+score)
 	score = 0
 }
 function Update(){
-	Isdead()
 	Newnum()
 	document.getElementById(233).innerHTML = "score: " + score
 	Draw()
+	Isdead()
 }
 
 var dx = [0,-1,0,1]
 var dy = [-1,0,1,0]
 function Shuffle(dx,dy){
+	var shuffled = 0
 	for( var k = 1 ; k <= 16 ; k++ )
 		for( var x = 1 ; x <= 4 ; x++ )
 			for( var y = 1 ; y <= 4 ; y++ ){
@@ -72,9 +78,12 @@ function Shuffle(dx,dy){
 				if( a[nx][ny] != 0 ) continue
 				a[nx][ny] = a[x][y]
 				a[x][y] = 0
+				shuffled = 1
 			}
+	return shuffled
 }
 function Merge(dx,dy){
+	var merged = 0
 	var xst = 1, xed = 4, xdelta = 1
 	var yst = 1, yed = 4, ydelta = 1
 	if( dx > 0 || dy > 0 ){
@@ -90,15 +99,19 @@ function Merge(dx,dy){
 			a[nx][ny]++
 			score += Math.pow(2,a[x][y])
 			a[x][y] = 0
+			merged = 1
 		}
+	return merged
 }
 
 function Keydown( event ){
 	var code = event.keyCode
 	if( code < 37 || code > 40 ) return
+	event.preventDefault();
 	code -= 37
-	Shuffle(dx[code],dy[code])
-	Merge(dx[code],dy[code])
-	Shuffle(dx[code],dy[code])
-	Update()
+	var updated = 0
+	updated += Shuffle(dx[code],dy[code])
+	updated += Merge(dx[code],dy[code])
+	updated += Shuffle(dx[code],dy[code])
+	if( updated > 0 ) Update()
 }
