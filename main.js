@@ -1,6 +1,7 @@
+var preload = []
 function Changeimg(i,j){
 	//document.write( a[id].d + "<br />" )
-	document.getElementById(i*5+j).src = "blockimg/" + a[i][j] + ".png"
+	document.getElementById(i*5+j).src = preload[a[i][j]].src
 }
 var leftdis = Math.ceil( (screen.availWidth-395) / 2 )
 var topdis = Math.floor( (screen.availHeight-400) * 0.4 )
@@ -11,6 +12,10 @@ var a = new Array()
 var score = 0
 
 function Init(){
+	for( var i = 0 ; i <= 11 ; i++ ){
+		preload[i] = new Image()
+		preload[i].src = "blockimg/" + i + ".png";
+	}
 	for( var i = 1 ; i <= 4 ; i++ ){
 		a[i] = new Array()
 		for( var j = 1 ; j <= 4 ; j++ ){
@@ -51,7 +56,7 @@ function Isdead(){
 			if( i != 4 && a[i+1][j] == a[i][j] ) return;
 			if( j != 4 && a[i][j+1] == a[i][j] ) return;
 		}
-	if( document.readyState != "complete" ) alert("QAQ");
+	//if( document.readyState != "complete" ) alert("QAQ");
 	//Draw()
 	alert("You have GGed!\nScore:"+score)
 	for( var i = 1 ; i <= 4 ; i++ )
