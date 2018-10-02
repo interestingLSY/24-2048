@@ -57,7 +57,7 @@ function Isdead(){
 			if( j != 4 && a[i][j+1] == a[i][j] ) return;
 		}
 	//if( document.readyState != "complete" ) alert("QAQ");
-	//Draw()
+	Draw()
 	alert("You have GGed!\nScore:"+score)
 	for( var i = 1 ; i <= 4 ; i++ )
 		for( var j = 1 ; j <= 4 ; j++ )
@@ -68,8 +68,8 @@ function Isdead(){
 }
 function Update(){
 	Newnum()
-	document.getElementById(233).innerHTML = "score: " + score
 	Draw()
+	document.getElementById(233).innerHTML = "score: " + score
 	Isdead()
 }
 function Loaderr(){
