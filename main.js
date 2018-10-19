@@ -111,7 +111,7 @@ function Merge(dx,dy){
 			//alert(nx+" "+ny)
 			if( a[x][y] == 0  ||  a[nx][ny] != a[x][y] ) continue
 			a[nx][ny]++
-			score += Math.pow(2,a[x][y])
+			score += Math.pow(2,a[x][y]+1)
 			a[x][y] = 0
 			merged = 1
 		}
